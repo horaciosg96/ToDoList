@@ -5,6 +5,14 @@ const template = document.getElementById('template').content
 const fragment = document.createDocumentFragment()
 let tareas = {}
 
+document.addEventListener('DOMContentLoaded', () => {
+    pintarTareas()
+})
+
+listaTarea.addEventListener('click', e => {
+    btnAccion(e)
+})
+
 formulario.addEventListener('submit', e => {
     e.preventDefault()
 
@@ -35,4 +43,8 @@ const setTarea = e => {
         })
     }
     listaTarea.appendChild(fragment)
+}
+
+const btnAccion = e => {
+    
 }
