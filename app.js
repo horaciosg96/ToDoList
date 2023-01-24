@@ -27,7 +27,7 @@ listaTarea.addEventListener('click', e => {
 formulario.addEventListener('submit', e => {
     e.preventDefault()
 
-    setTarea()
+    setTarea(e)
 })
 
 const setTarea = e => {
