@@ -3,7 +3,18 @@ const input = document.getElementById('input')
 const listaTarea = document.getElementById('lista-tareas')
 const template = document.getElementById('template').content
 const fragment = document.createDocumentFragment()
-let tareas = {}
+let tareas = {
+    1605990629039: {
+        id: 1605990629039,
+        texto: 'Tarea #1',
+        estado: false
+    },
+    1605990682337: {
+        id: 1605990682337,
+        texto: 'Tarea #2',
+        estado: false
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     pintarTareas()
