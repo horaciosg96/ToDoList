@@ -31,19 +31,23 @@ formulario.addEventListener('submit', e => {
 })
 
 const setTarea = e => {
-    if (input.value.trim() === '') {
+    const texto = e.target.querySelector('input').value
+
+    if (texto.trim() === '') {
         return
     }
 
     const tarea = {
         id: Date.now(),
-        texto: input.value,
+        texto: texto,
         estado: false
     }
 
     tareas[tarea.id] = tarea
+    pintarTareas()
+
     formulario.reset()
-    input.focus()
+    e.target.querySelector('input').focus()
 }
 
 const pintarTareas = () => {
