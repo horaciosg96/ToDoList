@@ -55,6 +55,14 @@ const pintarTareas = () => {
     Object.values(tareas).forEach(tarea => {
         const clone = template.cloneNode(true)
         clone.querySelector('p').textContent = tarea.texto
+
+        if (tarea.estado) {
+            clone.querySelector('.alert').classList.replace('alert-warning', 'alert-primary')
+            clone.querySelectorAll('.fas').classList.replace('fa-circle-check', 'fa-rotate-left')
+        }
+
+        clone.querySelectorAll('.fas')[0].dataset.id = tarea.id
+        clone.querySelectorAll('.fas')[1].dataset.id = tarea.id
         fragment.appendChild(clone)
     })
     listaTarea.appendChild(fragment)
