@@ -6,6 +6,9 @@ const fragment = document.createDocumentFragment()
 let tareas = {}
 
 document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('tareas')) {
+        tareas = JSON.parse(localStorage.getItem('tareas')
+    }
     pintarTareas()
 })
 
@@ -40,6 +43,8 @@ const setTarea = e => {
 }
 
 const pintarTareas = () => {
+
+    localStorage.setItem('tareas', JSON.stringify(tareas))
 
     if (Object.values(tareas).length === 0) {
         listaTarea.innerHTML = `<div class="alert alert-dark">No tasks pending!</div >`
