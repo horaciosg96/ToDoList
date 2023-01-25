@@ -58,7 +58,8 @@ const pintarTareas = () => {
 
         if (tarea.estado) {
             clone.querySelector('.alert').classList.replace('alert-warning', 'alert-primary')
-            clone.querySelectorAll('.fas').classList.replace('fa-circle-check', 'fa-rotate-left')
+            clone.querySelectorAll('.fas')[0].classList.replace('fa-circle-check', 'fa-rotate-left')
+            clone.querySelector('p').style.textDecoration = 'line-through'
         }
 
         clone.querySelectorAll('.fas')[0].dataset.id = tarea.id
@@ -77,6 +78,11 @@ const btnAccion = e => {
 
     if (e.target.classList.contains('fa-circle-minus')) {
         delete tareas[e.target.dataset.id]
+        pintarTareas()
+    }
+
+    if (e.target.classList.contains('fa-rotate-left')) {
+        tareas[e.target.dataset.id].estado = true
         pintarTareas()
     }
 
