@@ -3,18 +3,7 @@ const input = document.getElementById('input')
 const listaTarea = document.getElementById('lista-tareas')
 const template = document.getElementById('template').content
 const fragment = document.createDocumentFragment()
-let tareas = {
-    1605990629039: {
-        id: 1605990629039,
-        texto: 'Tarea #1',
-        estado: false
-    },
-    1605990682337: {
-        id: 1605990682337,
-        texto: 'Tarea #2',
-        estado: false
-    }
-}
+let tareas = {}
 
 document.addEventListener('DOMContentLoaded', () => {
     pintarTareas()
@@ -51,6 +40,12 @@ const setTarea = e => {
 }
 
 const pintarTareas = () => {
+
+    if (Object.values(tareas).length === 0) {
+        listaTarea.innerHTML = `<div class="alert alert-dark">No tasks pending!</div >`
+        return
+    }
+
     listaTarea.innerHTML = ''
     Object.values(tareas).forEach(tarea => {
         const clone = template.cloneNode(true)
