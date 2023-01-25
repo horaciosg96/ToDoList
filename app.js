@@ -7,7 +7,7 @@ let tareas = {}
 
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('tareas')) {
-        tareas = JSON.parse(localStorage.getItem('tareas')
+        tareas = JSON.parse(localStorage.getItem('tareas'))
     }
     pintarTareas()
 })
@@ -82,7 +82,7 @@ const btnAccion = e => {
     }
 
     if (e.target.classList.contains('fa-rotate-left')) {
-        tareas[e.target.dataset.id].estado = true
+        tareas[e.target.dataset.id].estado = false
         pintarTareas()
     }
 
