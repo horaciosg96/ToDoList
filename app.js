@@ -58,12 +58,12 @@ const pintarTareas = () => {
 
         if (tarea.estado) {
             clone.querySelector('.alert').classList.replace('alert-warning', 'alert-primary')
-            clone.querySelectorAll('.fas')[0].classList.replace('fa-circle-check', 'fa-rotate-left')
+            clone.querySelectorAll('.fa-solid')[0].classList.replace('fa-circle-check', 'fa-rotate-left')
             clone.querySelector('p').style.textDecoration = 'line-through'
         }
 
-        clone.querySelectorAll('.fas')[0].dataset.id = tarea.id
-        clone.querySelectorAll('.fas')[1].dataset.id = tarea.id
+        clone.querySelectorAll('.fa-solid')[0].dataset.id = tarea.id
+        clone.querySelectorAll('.fa-solid')[1].dataset.id = tarea.id
         fragment.appendChild(clone)
     })
     listaTarea.appendChild(fragment)
